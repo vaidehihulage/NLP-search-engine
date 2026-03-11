@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recipe Search Engine</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🍲 Smart Recipe Finder</h1>
+
+<form method="POST">
+<input type="text" name="search" placeholder="Search recipe or ingredient">
+<button type="submit">Search</button>
+</form>
+
+<ul>
+{% for r in results %}
+<li>
+<a href="/static/recipes/{{ r }}" target="_blank">
+{{ r.replace(".pdf","").title() }}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</body>
+</html>
+
